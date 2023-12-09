@@ -1,9 +1,7 @@
 // require modules
 const L = require('leaflet');
 const $ = require('jquery');
-require('leaflet-geometryutil');
-require('leaflet-arrowheads');
-
+require('leaflet-arrowheads/lib/index');
 
 // define map options
 const mapOptions = {
@@ -86,6 +84,7 @@ $.when(
     const MigrationArrows = L.geoJson(lamigration, {
         arrowheads: {
             yawn: 40,
+            fill: true,
             size: '10px',
             frequency: 'endonly'
         },
@@ -93,8 +92,8 @@ $.when(
         style: function (feature) {
             return {
                 color: 'tan',
-                dashArray: '3, 6',
-                weight: 5.0,
+                //dashArray: '6, 6',
+                weight: 2.0,
                 opacity: 0.75
             };
         }
